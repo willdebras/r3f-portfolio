@@ -9,17 +9,25 @@ export default function Eye({setSceneLetter}) {
 
     const [visible, setVisible] = useState(false)
 
+    const [windowSize, setWindowSize] = useState({
+        height: window.innerHeight,
+        width: window.innerWidth
+    })
+
+    const [scale, setScale] = useState(0)
+
     useEffect(()=> {
         setVisible(true)
+        setScale(windowSize.height * 0.9 / 1200)
     }, [])
 
     function handleClose() {
         setVisible(false)
-        setTimeout(() => setSceneLetter(''), 300)
+        setTimeout(() => setSceneLetter(''), 200)
     } 
 
     return <>
-        <div className={`mapBio ${visible && 'visible'}`} ref={wrapper}>
+        <div className={`mapBio ${visible && 'visible'}`} style={{transform: `scale(${scale})`}} ref={wrapper}>
             <div className='headerBio'>
                 <button className='backButton' onClick={handleClose}>{'<'}</button>
                 <button className='closeButton'>X</button>
