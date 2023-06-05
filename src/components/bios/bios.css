@@ -417,3 +417,73 @@
     z-index: 1;
     font-weight: bold;
   }
+
+  .contactCard {
+    width:max-content;
+    max-width: 550px;
+    padding:24px;
+    color:var(--menu-blue);
+    font-family: 'Flamenco', cursive;
+    font-size:72px;
+    background:var(--plant-bg);
+    box-shadow: 10px 10px rgba(32, 97, 15, 0.4);
+    font-weight:100;
+  }
+
+  .contactCard hr {
+    margin:10px;
+  }
+
+  .contactList {
+    font-size:42px;
+    padding:4px;
+  }
+
+  .contactList li::marker {
+    content: '☀   ';
+    font-size:0.8em;
+    font-weight:100;
+    color:var(--yellow-lines);
+  }
+
+  .contactList ul {
+    margin: auto;
+    width: 300px;
+  }
+
+  .contactList a {
+    color:var(--menu-blue);
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: lemonchiffon;
+    text-underline-offset: 8px;
+  }
+
+  .contactList a:hover, .contactList a:focus {
+    color:inherit;
+    animation-name: highlight;
+    animation-duration: 0.7s;
+    background-size:200%;
+    background-image: linear-gradient(to right, var(--plant-bg) 50%, transparent 50%), 
+    linear-gradient(transparent 0%, lemonchiffon 15%);
+    animation-fill-mode: forwards;
+  }
+
+  .contactList li:hover li::marker {
+    color:white;
+  }
+
+  .contactCard span {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    text-decoration-color: var(--yellow-lines);
+  }
+
+  .contactButtons {
+    font-size:16px;
+  }
+
+  .contactTitle {
+    padding:0 10px;
+  }

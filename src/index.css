@@ -21,6 +21,7 @@
   --canvas-bg: rgb(242, 238, 227);
   --menu-blue: rgb(0, 32, 57);
   --menu-blue-border: rgb(29, 156, 255);
+  --plant-bg: #e7fde7;
 
 }
 
@@ -58,7 +59,6 @@ div {
     font-weight:400;
     src: url('/fonts/bangers-v20-latin-regular.woff') format(woff);
   }
-
 
 
 a {

@@ -5,7 +5,7 @@ import Rocks from './drei/Rocks.jsx'
 
 export default function AdditionalModels() {
     return <>
-        <Boat />
-        <Rocks />
+        {/* <Boat /> */}
+        {/* <Rocks /> */}
     </>
 }

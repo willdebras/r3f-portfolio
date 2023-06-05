@@ -12,6 +12,7 @@ import Planes from './components/Planes'
 import AdditionalModels from './components/AdditionalModels'
 import IntersectionChecks from './components/IntersectionChecks'
 import IntroHTML from './components/bios/IntroHTML.jsx'
+import ContactCard from './components/bios/ContactCard.jsx'
 
 
 export default function Experience({sceneLetter, setSceneLetter}) {
@@ -106,6 +107,7 @@ export default function Experience({sceneLetter, setSceneLetter}) {
         >
             <Will />
             <IntroHTML sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} />
+            <ContactCard sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} />
             <Water />
             <Planes />
             <AdditionalModels />
