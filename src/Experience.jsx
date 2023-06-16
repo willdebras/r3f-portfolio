@@ -72,8 +72,8 @@ export default function Experience({sceneLetter, setSceneLetter}) {
 
         } else if(sceneLetter === 'L2') {
 
-            cameraPosition = new THREE.Vector3(-3.65, 2.25, 7.67)
-            cameraTarget = new THREE.Vector3(3.64, 0.75, 12.76)
+            cameraPosition = new THREE.Vector3(-3.8, 2.4, 7.67)
+            cameraTarget = new THREE.Vector3(3, 0.2, 12.76)
 
         }
 

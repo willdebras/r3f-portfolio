@@ -25,9 +25,6 @@ export default function ContactCard({sceneLetter, setSceneLetter}) {
         handleClose()
     }, [closeButton])
 
-    console.log(sceneLetter)
-    
-
     return <>
         {sceneLetter === 'L2' && 
         <>
@@ -35,17 +32,19 @@ export default function ContactCard({sceneLetter, setSceneLetter}) {
                 transform
                 wrapperClass="macbookScreen"
                 distanceFactor={ 1 }
-                position={ [ -0.6, 2, 8.5 ] }
+                position={ [ -1.1, 2.4, 10.5 ] }
                 rotation-x={ 0.05 }
-                rotation-y={ -2.1 }
+                rotation-y={ -2.4 }
             >
                 <div className={`contactCard ${visible && 'visible'}`} ref={wrapper}>
-                    <div className='contactButtons'>
+                    {/* <div className='contactButtons'>
                         <button className='backButton' onClick={handleClose}>⌦</button>
-                    </div>
+                    </div> */}
                     <hr></hr>
                     <div className='contactTitle'>
-                    where to find <span>me</span>
+                    <span>
+                        <button className='backButton' onClick={handleClose}>⌦</button>
+                    </span> | where to find <span>me</span>
                     </div>
                     <hr></hr>
                     <div className='contactList'>
@@ -53,7 +52,6 @@ export default function ContactCard({sceneLetter, setSceneLetter}) {
                             <li><a href='https://twitter.com/_willdebras'>twitter dot com</a></li>
                             <li><a href='mailto:wbonnell123@gmail.com'>electronic mail</a></li>
                             <li><a href='https://github.com/willdebras'>github dot com</a></li>
-                            <li><a href='https://www.linkedin.com/in/william-bonnell-85982b3a/'>linked in</a></li>
                         </ul>
                     </div>
                 </div>

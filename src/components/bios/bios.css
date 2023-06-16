@@ -420,7 +420,7 @@
 
   .contactCard {
     width:max-content;
-    max-width: 550px;
+    max-width: 650px;
     padding:24px;
     color:var(--menu-blue);
     font-family: 'Flamenco', cursive;

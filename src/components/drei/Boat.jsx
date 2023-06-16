@@ -21,7 +21,7 @@ export default function Boat(props) {
     })
 
   const group = useRef()
-  const { nodes, materials } = useGLTF('https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/boat-large/model.gltf')
+  const { nodes, materials } = useGLTF('./boat.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
         <mesh geometry={nodes.boat_large_8angles.geometry} material={materials.wood} position={[-0.7, 1.68, 3.1]} scale={0.3} rotation-y={Math.PI/2 * 0.8} />
@@ -29,4 +29,4 @@ export default function Boat(props) {
   )
 }
 
-useGLTF.preload('https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/boat-large/model.gltf')
+useGLTF.preload('./boat.gltf')
