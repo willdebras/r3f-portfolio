@@ -1,5 +1,5 @@
 import { OrbitControls, Sky, PresentationControls, PerspectiveCamera, CameraControls } from '@react-three/drei'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, Suspense } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -14,6 +14,7 @@ import IntersectionChecks from './components/IntersectionChecks'
 import IntroHTML from './components/bios/IntroHTML.jsx'
 import ContactCard from './components/bios/ContactCard.jsx'
 
+import Loader from './components/Loader'
 
 export default function Experience({sceneLetter, setSceneLetter}) {
 
@@ -105,7 +106,9 @@ export default function Experience({sceneLetter, setSceneLetter}) {
             config={ { mass: 2, tension: 100 } }
             snap={ { mass: 4, tension: 100 } }
         >
-            <Will />
+            <Suspense fallback={<Loader />}>
+                <Will />
+            </Suspense> 
             <IntroHTML sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} />
             <ContactCard sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} />
             <Water />
