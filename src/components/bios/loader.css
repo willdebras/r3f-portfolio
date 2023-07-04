@@ -13,6 +13,7 @@
     height: 20px;
     border-radius: 4px;
     padding: 2px;
+    overflow:hidden;
 }
 
 .progressValue {

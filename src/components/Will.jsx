@@ -17,6 +17,10 @@ export default function Will() {
     const tomatoesPainted = useTexture('./tomatoes.png')
     tomatoesPainted.flipY = false
 
+    const cukes = useGLTF('./cukes.glb')
+    const cukesPainted = useTexture('./cukes.png')
+    cukesPainted.flipY = false
+
     willrest.scene.traverse((mesh) => {
         mesh.receiveShadow = true
         mesh.castShadow = true
@@ -61,6 +65,15 @@ export default function Will() {
             scale={ tomatoes.nodes.plantsJoined.scale }
         >
             <meshBasicMaterial map={tomatoesPainted} />
+        </mesh>
+
+        <mesh 
+            geometry={ cukes.nodes.cukesJoined.geometry } 
+            position={ cukes.nodes.cukesJoined.position }
+            rotation={ cukes.nodes.cukesJoined.rotation }
+            scale={ cukes.nodes.cukesJoined.scale }
+        >
+            <meshBasicMaterial map={cukesPainted} />
         </mesh>
 
     </>
