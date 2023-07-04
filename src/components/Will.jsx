@@ -8,6 +8,7 @@ export default function Will() {
     const willrest = useGLTF('./willrest.glb')
 
     const glasses = useGLTF('./glasses.glb')
+    const wineglasses = useGLTF('./wineglasses.glb')
 
     const sign = useGLTF('./contact.glb')
     const signPainted = useTexture('./woodSign_sprayPaint.png')
@@ -27,7 +28,7 @@ export default function Will() {
     })
 
     const { nodes } = useGLTF('./willbase.glb')
-    const baseWillBaked = useTexture('./willtex-Annotated-cleanup.png')
+    const baseWillBaked = useTexture('./willtex-Annotated-cleanup-colors.png')
     baseWillBaked.flipY = false
 
     return <>
@@ -46,7 +47,16 @@ export default function Will() {
             rotation={ glasses.nodes.glassesJoined.rotation }
             scale={ glasses.nodes.glassesJoined.scale }
         >
-            <MeshTransmissionMaterial color='#EBEBEE' thickness={1.0} transmission={1} />
+            <MeshTransmissionMaterial color='#e1e1e8' thickness={7} transmission={0.94} />
+        </mesh>
+
+        <mesh 
+            geometry={ wineglasses.nodes.wineglasses.geometry } 
+            position={ wineglasses.nodes.wineglasses.position }
+            rotation={ wineglasses.nodes.wineglasses.rotation }
+            scale={ wineglasses.nodes.wineglasses.scale }
+        >
+            <MeshTransmissionMaterial color='#e1e1e8' thickness={7} transmission={0.95} />
         </mesh>
 
         <mesh 
