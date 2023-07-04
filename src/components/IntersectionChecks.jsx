@@ -55,7 +55,7 @@ function Underline({position, letterId, width, rotationZ, visible}) {
                 onPointerLeave={ ()=> {} }
             >
             <planeBufferGeometry args={[width, 0.03]} />
-            <meshBasicMaterial transparent={!visible} opacity={0} color={'yellow'} />
+            <meshBasicMaterial transparent={!visible} opacity={visible ? 1.0 : 0.0} color='orange'/>
         </mesh>
     </>
 }
