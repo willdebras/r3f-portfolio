@@ -1,7 +1,7 @@
 import { useHelper, Environment } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { useEffect, useRef } from "react"
-import { DirectionalLightHelper } from "three"
+// import { DirectionalLightHelper } from "three"
 
 import { button, useControls } from 'leva'
 
@@ -19,7 +19,7 @@ export default function Lights()
 
     const light = useRef()
     
-    useHelper(light, DirectionalLightHelper, 10)
+    // useHelper(light, DirectionalLightHelper, 10)
 
     useEffect(()=> {
         if(light.current) {
