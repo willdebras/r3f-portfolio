@@ -133,7 +133,7 @@
     border-block-end: 26px solid gold;
     border-inline-start: 24px solid gold;
     border-inline-end: 24px solid gold;
-    border-image-source: url('./images/sillyborderdark.svg');
+    border-image-source: url('../images/sillyborderdark.svg');
     border-image-slice: 14;
     height:100%;
     border-image-repeat:round;
