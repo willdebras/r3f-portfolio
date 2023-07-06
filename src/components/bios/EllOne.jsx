@@ -29,7 +29,7 @@ export default function EllOne({setSceneLetter}) {
         <div className={`menu ${visible && 'visible'}`} style={{transform: `scale(${scale})`}} ref={wrapper}>
             <div className='border-image'>
                 <button className='menuReturn' onClick={handleClose}>Return</button>
-                <button className='menuClose'>Explore</button>
+                <button className='menuClose' onClick={handleClose}>Explore</button>
                 <h1>PROJECTS</h1>
                 <div className='menu-data'>
                     <a className='menu-card' href='https://github.com/microsoft/datamations' target="_blank">

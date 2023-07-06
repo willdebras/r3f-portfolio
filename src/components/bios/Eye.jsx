@@ -30,7 +30,7 @@ export default function Eye({setSceneLetter}) {
         <div className={`mapBio ${visible && 'visible'}`} style={{transform: `scale(${scale})`}} ref={wrapper}>
             <div className='headerBio'>
                 <button className='backButton' onClick={handleClose}>{'<'}</button>
-                <button className='closeButton'>X</button>
+                <button className='closeButton' onClick={handleClose}>X</button>
             </div>
             <h1>
                 WILL's JOURNEY:
