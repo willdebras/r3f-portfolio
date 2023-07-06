@@ -28,7 +28,7 @@ export default function Will() {
     })
 
     const { nodes } = useGLTF('./willbase.glb')
-    const baseWillBaked = useTexture('./willtex-Annotated-cleanup-colors.png')
+    const baseWillBaked = useTexture('./willtex-Annotated-cleanup-colors.jpg')
     baseWillBaked.flipY = false
 
     return <>
