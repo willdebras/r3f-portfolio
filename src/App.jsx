@@ -10,7 +10,7 @@ import { MouseContext } from "./context/mouse-context"
 
 function App() {
 
-  const { cursorType, cursorChangeHandler } = useContext(MouseContext)
+  // const { cursorType, cursorChangeHandler } = useContext(MouseContext)
 
   const [sceneLetter, setSceneLetter] = useState()
 
@@ -18,7 +18,7 @@ function App() {
     <>
       <Bio sceneLetter={sceneLetter} setSceneLetter={setSceneLetter}/>
       <Leva hidden />
-      <Cursor />
+      {/* <Cursor /> */}
       <Canvas> 
         <Experience sceneLetter={sceneLetter} setSceneLetter={setSceneLetter}/>
       </Canvas>
