@@ -3,9 +3,13 @@ import { useEffect, useRef, useState } from "react"
 import TrainMap from '../../assets/transitmap.svg'
 import './bios.css'
 
+import { useClickAway } from "../../hooks/useClickAway.js"
+
 export default function Eye({setSceneLetter}) {
 
-    const wrapper = useRef()
+    const wrapper = useClickAway(() => {
+        setSceneLetter('')
+      })
 
     const [visible, setVisible] = useState(false)
 
@@ -27,7 +31,7 @@ export default function Eye({setSceneLetter}) {
     } 
 
     return <>
-        <div className={`mapBio ${visible && 'visible'}`} style={{transform: `scale(${scale})`}} ref={wrapper}>
+        <div className={`mapBio ${visible && 'visible'}`} style={{transform: `scale(${scale})`, left: `calc(50% - ${400*scale}px)`}} ref={wrapper}>
             <div className='headerBio'>
                 <button className='backButton' onClick={handleClose}>{'<'}</button>
                 <button className='closeButton' onClick={handleClose}>X</button>

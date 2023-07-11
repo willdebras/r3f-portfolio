@@ -2,9 +2,16 @@ import { useEffect, useRef, useState } from "react"
 
 import './bios.css'
 
+import { useClickAway } from "../../hooks/useClickAway.js"
+
 export default function EllOne({setSceneLetter}) {
 
-    const wrapper = useRef()
+    // const wrapper = useRef()
+
+    const wrapper = useClickAway(() => {
+        setSceneLetter('')
+      })
+    
 
     const [visible, setVisible] = useState(false)
 
@@ -26,7 +33,7 @@ export default function EllOne({setSceneLetter}) {
     } 
 
     return <>
-        <div className={`menu ${visible && 'visible'}`} style={{transform: `scale(${scale})`}} ref={wrapper}>
+        <div className={`menu ${visible && 'visible'}`} style={{transform: `scale(${scale})`, left: `calc(50% - ${400*scale}px)`}} ref={wrapper}>
             <div className='border-image'>
                 <button className='menuReturn' onClick={handleClose}>Return</button>
                 <button className='menuClose' onClick={handleClose}>Explore</button>
