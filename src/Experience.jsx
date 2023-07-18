@@ -16,7 +16,7 @@ import ContactCard from './components/bios/ContactCard.jsx'
 
 import Loader from './components/Loader'
 
-export default function Experience({sceneLetter, setSceneLetter}) {
+export default function Experience({sceneLetter, setSceneLetter, isMobile}) {
 
     const [ controlsEnabled, setControlsEnabled ] = useState(true)
 
@@ -76,7 +76,24 @@ export default function Experience({sceneLetter, setSceneLetter}) {
             cameraPosition = new THREE.Vector3(-3.8, 2.4, 7.67)
             cameraTarget = new THREE.Vector3(3, 0.2, 12.76)
 
+        } else if(sceneLetter === 'topW') {
+            cameraPosition = new THREE.Vector3(-9, 7.5, 1)
+            cameraTarget = new THREE.Vector3(0.5, 1.0, 1.8)
+
+        } else if(sceneLetter === 'topI') {
+            cameraPosition = new THREE.Vector3(-6, 6.5, 4.5)
+            cameraTarget = new THREE.Vector3(-0.5, -0.4, 4.6)
+
+        } else if(sceneLetter === 'topL') {
+            cameraPosition = new THREE.Vector3(-5.5, 5.8, 6.5)
+            cameraTarget = new THREE.Vector3(0, -0.5, 6.75)
+
+        } else if(sceneLetter === 'topL2') {
+            cameraPosition = new THREE.Vector3(-5.2, 5.8, 8.5)
+            cameraTarget = new THREE.Vector3(0.5, -0.5, 9.0)
+
         }
+
 
         smoothedCameraPosition.lerp(cameraPosition, 3 * delta)
         state.camera.position.copy(smoothedCameraPosition)

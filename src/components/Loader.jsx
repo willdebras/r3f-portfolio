@@ -41,7 +41,7 @@ export default function Loader() {
       
       </Html>
     <mesh>
-        <planeGeometry args={[2, 2, 1, 1]} />
+        <planeGeometry args={[20, 20, 1, 1]} />
         <shaderMaterial
             fragmentShader={fragmentShader}
             vertexShader={vertexShader}

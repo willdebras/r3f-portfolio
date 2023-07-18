@@ -1,0 +1,51 @@
+.mobilenav {
+    position:absolute;
+    width:270px;
+    top:16px;
+    left:0;
+    right:0;
+    margin:auto;
+    z-index:9;
+    color:black;
+}
+
+.navform {
+    display:flex;
+}
+
+.navform input {
+    transform:scale(0);
+    visibility: hidden;
+    width:0;
+    height:0;
+}
+
+.mobilenavitem {
+    border:1px solid lightblue;
+    padding:0;
+    margin:4px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.mobilenavitem label {
+    padding:4px;
+    font-size:36px;
+    font-weight:400;
+    color:rgb(9 77 130);
+    font-family: 'Source Code Pro', monospace;
+    display:block;
+    width:48px;
+    height:auto;
+    text-align:center;
+    background-color:#ECEFF1;
+    cursor:pointer;
+}
+
+.navselected {
+    border:1px solid steelblue;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navselected label {
+    font-weight:700;
+}
