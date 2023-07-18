@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Bio sceneLetter={sceneLetter} setSceneLetter={setSceneLetter}/>
+      <Bio sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} isMobile={isMobile}/>
       <Leva hidden />
       { isMobile && <MobileNav sceneLetter={sceneLetter} setSceneLetter={setSceneLetter}/> }
       {/* <Cursor /> */}

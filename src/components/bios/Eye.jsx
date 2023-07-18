@@ -5,7 +5,7 @@ import './bios.css'
 
 import { useClickAway } from "../../hooks/useClickAway.js"
 
-export default function Eye({setSceneLetter}) {
+export default function Eye({setSceneLetter, isMobile}) {
 
     const wrapper = useClickAway(() => {
         setSceneLetter('')
@@ -19,11 +19,25 @@ export default function Eye({setSceneLetter}) {
     })
 
     const [scale, setScale] = useState(0)
+    const [mapStyles, setMapStyles] = useState()
+
 
     useEffect(()=> {
         setVisible(true)
-        setScale(windowSize.height * 0.9 / 1200)
     }, [])
+
+    useEffect(()=> {
+
+        console.log(isMobile)
+        isMobile ? setScale(windowSize.width * 0.9 / 900) : setScale(windowSize.height * 0.9 / 1200)
+        let newStyles
+        newStyles = isMobile 
+            ? newStyles = ({transform: `scale(${scale})`, top: `calc(50% - ${550*scale}px)`, left: `calc(50% - ${430*scale}px)`}) 
+            : ({transform: `scale(${scale})`, left: `calc(50% - ${400*scale}px)`})
+        // console.log(newStyles)
+        setMapStyles(newStyles)
+
+    }, [scale])
 
     function handleClose() {
         setVisible(false)
@@ -31,7 +45,7 @@ export default function Eye({setSceneLetter}) {
     } 
 
     return <>
-        <div className={`mapBio ${visible && 'visible'}`} style={{transform: `scale(${scale})`, left: `calc(50% - ${400*scale}px)`}} ref={wrapper}>
+        <div className={`mapBio ${visible && 'visible'}`} style={mapStyles} ref={wrapper}>
             <div className='headerBio'>
                 <button className='backButton' onClick={handleClose}>{'<'}</button>
                 <button className='closeButton' onClick={handleClose}>X</button>
