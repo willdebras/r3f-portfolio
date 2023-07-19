@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './bios/nav.css'
 
 export default function MobileNav({sceneLetter, setSceneLetter}) {
@@ -6,7 +6,7 @@ export default function MobileNav({sceneLetter, setSceneLetter}) {
     const inputs = [["W", "topW"], ["I", "topI"], ["L", "topL"], ["L", "topL2"]]
 
 
-    const [navSelected, setNavSelected] = useState('W')
+    const [navSelected, setNavSelected] = useState('topW')
 
     const changeLetter = (value) => {
         setNavSelected(value)

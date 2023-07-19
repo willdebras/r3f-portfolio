@@ -42,7 +42,8 @@ export default function EllOne({setSceneLetter, isMobile}) {
 
     function handleClose() {
         setVisible(false)
-        setTimeout(() => setSceneLetter(''), 200)
+        if(isMobile) setTimeout(() => setSceneLetter('topL'), 300)
+        else setTimeout(() => setSceneLetter(''), 200)
     } 
 
     return <>

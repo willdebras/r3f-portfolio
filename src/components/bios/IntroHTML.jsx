@@ -4,7 +4,7 @@ import { Html } from '@react-three/drei'
 import './bios.css'
 import Sparkles from './Sparkles.jsx'
 
-export default function IntroHTML({sceneLetter, setSceneLetter}) {
+export default function IntroHTML({sceneLetter, setSceneLetter, isMobile}) {
 
     const wrapper = useRef()
 
@@ -18,7 +18,8 @@ export default function IntroHTML({sceneLetter, setSceneLetter}) {
 
     function handleClose() {
         setVisible(false)
-        setTimeout(() => setSceneLetter(''), 300)
+        if(isMobile) setTimeout(() => setSceneLetter('topW'), 300)
+        else setTimeout(() => setSceneLetter(''), 300)
     }
 
     useEffect(()=> {
@@ -27,7 +28,7 @@ export default function IntroHTML({sceneLetter, setSceneLetter}) {
     
 
     return <>
-        {sceneLetter === 'W' && 
+        {!isMobile && sceneLetter === 'W' && 
         <>
             <Html
                 transform
@@ -73,6 +74,36 @@ export default function IntroHTML({sceneLetter, setSceneLetter}) {
                 </div>
             </Html>
         </>
+        }
+        {isMobile && sceneLetter === 'W' && 
+            <Html
+                transform
+                wrapperClass="macbookScreen"
+                distanceFactor={ 2.0 }
+                position={ [ 6.1, 1.1, 2.65 ] }
+                // experimenting with non-transform html object
+                // distanceFactor={ 3.1 }
+                // position={ [ 4.1, 3.1, 1.55 ] }
+                rotation-x={ -0.01 }
+                rotation-y={ -1.52 }
+            >
+                <div className={`introCard ${visible && 'visible'}`} ref={wrapper}>
+                    <button onClick={handleClose} className={`mobileBack`}>⭰</button> | 
+                    <span><sup>  I'm</sup></span> Will Bonnell <span><sup>aka</sup></span> willdebras
+                    <hr></hr>
+                    <div className='introSubtitle'> 
+                        ▷ I'm a <span>creative developer</span> with a background in <span>data science</span> and <span>visualization</span>.
+                    </div>
+                </div>
+                <br ></br>
+                <div className={`introCard ${visible && 'visible'}`} ref={wrapper}>
+                    <div className='introSubtitle'> 
+                    ▷ This portfolio exists as a <Sparkles className='flourish'>playground</Sparkles> for my three.js work. It includes explorations in design, <span>baked and hand-painted models</span>, <span>graphics shaders</span>, and more.
+                    <div>▷ Click around and Enjoy!</div>
+                    </div>
+                </div>
+            </Html>
+
         }
     </>
 }

@@ -41,7 +41,8 @@ export default function Eye({setSceneLetter, isMobile}) {
 
     function handleClose() {
         setVisible(false)
-        setTimeout(() => setSceneLetter(''), 200)
+        if(isMobile) setTimeout(() => setSceneLetter('topI'), 300)
+        else setTimeout(() => setSceneLetter(''), 200)
     } 
 
     return <>

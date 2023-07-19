@@ -54,10 +54,15 @@ export default function Experience({sceneLetter, setSceneLetter, isMobile}) {
         let cameraPosition = new THREE.Vector3(-7, 7.5, 4)
         let cameraTarget = new THREE.Vector3(-0.5, 0, 4.6)
 
-        if(sceneLetter === 'W') {
+        if(sceneLetter === 'W' && !isMobile) {
             cameraPosition = new THREE.Vector3(-4, 2.5, 3.35)
             cameraTarget = new THREE.Vector3(2.5, 1.4, -0.07)
 
+
+        } else if(sceneLetter === 'W' && isMobile) {
+
+            cameraPosition = new THREE.Vector3(-4, 3, 3.55)
+            cameraTarget = new THREE.Vector3(2, 1.4, 3.07)
 
         } else if(sceneLetter === 'I') {
             cameraPosition = new THREE.Vector3(-3.35, 1.58, 4.58)
@@ -71,10 +76,15 @@ export default function Experience({sceneLetter, setSceneLetter, isMobile}) {
             cameraPosition = new THREE.Vector3(-2.76, 1.71, 6.04)
             cameraTarget = new THREE.Vector3(2.2, 1.0, 8.63)
 
-        } else if(sceneLetter === 'L2') {
+        } else if(sceneLetter === 'L2' && !isMobile) {
 
             cameraPosition = new THREE.Vector3(-3.8, 2.4, 7.67)
             cameraTarget = new THREE.Vector3(3, 0.2, 12.76)
+
+        }  else if(sceneLetter === 'L2' && isMobile) {
+
+            cameraPosition = new THREE.Vector3(-4.0, 2.4, 7.87)
+            cameraTarget = new THREE.Vector3(3.4, 1.1, 10.16)
 
         } else if(sceneLetter === 'topW') {
             cameraPosition = new THREE.Vector3(-9, 7.5, 1)
@@ -126,8 +136,8 @@ export default function Experience({sceneLetter, setSceneLetter, isMobile}) {
             <Suspense fallback={<Loader />}>
                 <Will />
             </Suspense> 
-            <IntroHTML sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} />
-            <ContactCard sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} />
+            <IntroHTML sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} isMobile={isMobile} />
+            <ContactCard sceneLetter={sceneLetter} setSceneLetter={setSceneLetter} isMobile={isMobile} />
             <Water />
             <Planes />
             <AdditionalModels />

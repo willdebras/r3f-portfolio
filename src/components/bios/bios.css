@@ -110,6 +110,12 @@
     font-size:32px;
   }
 
+  .mobileBack {
+    background-color:var(--canvas-bg);
+    color:black;
+    padding:4px;
+  }
+
   .menu {
     position:absolute;
     width:860px;
